@@ -6,8 +6,8 @@
     "engines":{
         "node" : "0.10.x",
         "npm" :"1.4.x"
-    }
-    "dependencies" : {
+    },
+    "dependencies": {
         "express": "~4.13.3",
         "body-parser": "~1.15.0",
         "mongodb": "~2.1.3",
