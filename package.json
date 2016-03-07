@@ -1,0 +1,19 @@
+{
+    "name": "giftmart",
+    "version": "0.1.0",
+    "description": "Ecommerce app Using the MongoDB driver and Express",
+    "main": "giftmart.js",
+    "engines":{
+        "node" : "0.10.x",
+        "npm" :"1.4.x"
+    }
+    "dependencies": {
+        "express": "~4.13.3",
+        "body-parser": "~1.15.0",
+        "mongodb": "~2.1.3",
+        "nunjucks": "~2.2.0",
+        "nunjucks-date": "~1.2.0"
+    },
+    "author": "SR",
+    "license": ""
+}
