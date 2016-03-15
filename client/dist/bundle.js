@@ -78,9 +78,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/home',
     template: '<nav-bar></nav-bar>' + '<category-list></category-list>'
-  }).state('home.item', {
+  }).state('item', {
     url: '/item/id/:itemId',
     template: '<product-details></product-details>'
+    /* <product-details></product-details>*/
   });
 });
 
@@ -102,7 +103,7 @@ exports.NavBarController = function ($scope) {
 exports.categoryListController = function ($scope, homeService) {
 
     homeService.fetchHome().then(function (result) {
-        console.log('Result returned from Service is->' + result);
+        //console.log('Result returned from Service is->'+result);
         $scope.category_param = result.data.category_param;
         $scope.categories = result.data.categories;
         $scope.items = result.data.items;
@@ -116,11 +117,12 @@ exports.categoryListController = function ($scope, homeService) {
 'use strict';
 
 exports.ProductDetailsController = function ($scope, $stateParams, itemService) {
-  var encoded = encodeURIComponent($stateParams.id);
+  console.log('product controller loaded');
+  var encoded = encodeURIComponent($stateParams.itemId);
   console.log('item id from client is' + encoded);
   itemService.fetchItem(encoded).then(function (result) {
-    console.log('Result returned from Item Service is->' + result);
-    $scope.item = result.data.item;
+    console.log('Result returned from Item Service is->' + JSON.stringify(result));
+    $scope.item = result;
   });
 
   setTimeout(function () {
@@ -149,6 +151,7 @@ exports.categoryList = function () {
 'use strict';
 
 exports.productDetails = function () {
+
   return {
     controller: 'ProductDetailsController',
     templateUrl: '/templates/item_details.html'
@@ -184,7 +187,8 @@ exports.productDetails = function () {
 
     self.fetchItem = function (id) {
       return $http.get('/item/id/' + id).then(function (result) {
-        return result.data;
+        console.log('result is in Product Service file ' + JSON.stringify(result.data.data.item));
+        return result.data.data.item;
       }, function (error) {
         console.log(error.message);
       });

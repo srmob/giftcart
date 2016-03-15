@@ -5,7 +5,8 @@ exports.itemService = function($http) {
   self.fetchItem = function(id) {
     return $http.get('/item/id/'+id)
       .then(function(result){
-        return result.data;
+        console.log('result is in Product Service file '+JSON.stringify(result.data.data.item))
+        return result.data.data.item;
       },function(error) {
             console.log(error.message);
       });

@@ -4,6 +4,10 @@
         "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/sorting/chinese-string.js",
         "datatables.net.js",
         "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/features/lengthLinks/dataTables.lengthLinks.js",
-        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/api/fnReloadAjax.js"
+        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/api/fnReloadAjax.js",
+        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/api/page.jumpToData().js",
+        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/dist/bundle.js",
+        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/features/alphabetSearch/dataTables.alphabetSearch.js",
+        "/Shashi-data/sriganesh/GiftThoughts/gift_mean/client/static/bower_components/datatables-plugins/features/alphabetSearch/dataTables.alphabetSearch.min.js"
     ]
 }

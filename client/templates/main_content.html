@@ -31,16 +31,17 @@
                 <!-- Project One -->
                 <div class="row" ng-repeat='item in items'>
                     <div class="col-md-7">
-                        <a href="/item/{{item._id}}">
+                        <a ui-sref="item({itemId: item._id})">
                             <img class="img-responsive" src="/static/{{item.img_url}}" alt="">
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3><a href="/item/{{item._id}}">{{item.title}}</a></h3>
+                        <h3><a ui-sref="item({itemId: item._id})">{{item.title}}</a></h3>
                         <h4>{{item.slogan}}</h4>
                         <p>{{item.description}}</p>
-                        <a class="btn btn-primary" ui-sref="home.item({itemId: item._id})">View Product <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a class="btn btn-primary" ui-sref="item({itemId: item._id})">View Product <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
+                    <!--<a ui-sref="home.item({itemId: item._id})"> test </a>-->
                 </div>
                 <!-- /.row -->
 
@@ -64,4 +65,5 @@
         <!--main content of product display ends here-->
         
     </div>
+    <div ui-view></div>
 </div>

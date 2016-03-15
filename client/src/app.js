@@ -74,9 +74,10 @@ app.config(function($stateProvider,$urlRouterProvider){
             template: '<nav-bar></nav-bar>'+
                       '<category-list></category-list>'
         })
-        .state('home.item',{
+        .state('item',{
             url: '/item/id/:itemId',
             template: '<product-details></product-details>'
+       /* <product-details></product-details>*/
         })
 });
 
