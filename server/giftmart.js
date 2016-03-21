@@ -139,7 +139,7 @@ MongoClient.connect(connectionString, function(err, db) {
                 res.status(404).send("Item not found.");
                 return;
             }
-            
+            //console.log('items length is ****'+item.length)
             var stars = 0;
             var numReviews = 0;
             var reviews = [];
@@ -158,7 +158,7 @@ MongoClient.connect(connectionString, function(err, db) {
                     reviews = item.reviews;
                 }
             }
-
+            
             items.getRelatedItems(function(relatedItems) {
 
                 console.log(relatedItems);
@@ -171,6 +171,14 @@ MongoClient.connect(connectionString, function(err, db) {
                                relatedItems: relatedItems
                            }});
             });
+            /*res.json({data:{
+                               userId: USERID,
+                               item: item,
+                               stars: stars,
+                               reviews: reviews,
+                               numReviews: numReviews,
+                               //relatedItems: relatedItems
+                           }});*/
         });
     });
 
@@ -182,6 +190,8 @@ MongoClient.connect(connectionString, function(err, db) {
         var review = req.body.review;
         var name = req.body.name;
         var stars = parseInt(req.body.stars);
+        
+        console.log('in server side,'+itemId);
 
         items.addReview(itemId, review, name, stars, function(itemDoc) {
             res.redirect("/item/" + itemId);

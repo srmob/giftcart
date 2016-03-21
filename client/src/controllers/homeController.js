@@ -13,7 +13,7 @@ exports.NavBarController = function($scope) {
 exports.categoryListController = function($scope,homeService) {
   
     homeService.fetchHome().then(function(result){
-        //console.log('Result returned from Service is->'+result);
+        console.log('Result returned from Service is->'+result);
         $scope.category_param = result.data.category_param;
         $scope.categories = result.data.categories;
         $scope.items = result.data.items;

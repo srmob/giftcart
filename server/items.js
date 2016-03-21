@@ -175,31 +175,21 @@ function ItemDAO(database) {
     this.getItem = function(itemId, callback) {
         "use strict";
 
-        /*
-         * TODO-lab3
-         *
-         * LAB #3: Query the "item" collection by _id and pass the matching item
-         * to the callback function.
-         *
-         */
+        
         var collectionItem = this.db.collection('items');
-        var item = {};
+        var item = [];
+        console.log("item id in items.js is "+itemId);
         collectionItem.findOne({_id: itemId},function(err,result){
-            //collection.findOne({a:2}, {fields:{b:1}}, function(err, doc) 
-            console.log('result length is '+result.length);
+            console.log('result in findOne is '+JSON.stringify(result));
+            //console.log('result length* in findOne is '+result.length);
             if(err){
                 console.log(err);
-            }else if(result.length){
+            }else if(result){
                item = result;
                 console.log('individual item is'+JSON.stringify(result));
             }
             callback(result);
         });
-        //var item = this.createDummyItem();
-
-        // TODO-lab3 Replace all code above (in this method).
-
-        //callback(item);
     }
 
 

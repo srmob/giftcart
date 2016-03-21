@@ -1,7 +1,8 @@
 import angular from 'angular'
 import 'angular-ui-router' 
-var _ = require('underscore'); 
-
+import 'angular-ui-bootstrap'
+var _ = require('underscore');   
+ 
 //Fetch All controllers
 
 var homeController = require('./controllers/homeController');   
@@ -49,7 +50,7 @@ _.each(productDirectives, function(directive, name) {
 });
 
 
-var app = angular.module('coolapp',['giftmart.components','ui.router']);
+var app = angular.module('coolapp',['giftmart.components','ui.router','ui.bootstrap']);
 
 /*app.config(function($routeProvider) {
   $routeProvider.
@@ -76,7 +77,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         })
         .state('item',{
             url: '/item/id/:itemId',
-            template: '<product-details></product-details>'
+            template: '<nav-bar></nav-bar>'+'<product-details></product-details>'
        /* <product-details></product-details>*/
         })
 });
